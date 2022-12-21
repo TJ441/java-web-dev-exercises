@@ -5,7 +5,11 @@ public class Area {
     Scanner input = new Scanner(System.in);
     System.out.println("Enter radius:");
     Double radius = input.nextDouble();
-    System.out.println("Area is " + (3.14159 * radius * radius));
+    while (radius < 0) {
+      System.out.println("Enter a positive number:");
+      radius = input.nextDouble();
+    }
+    System.out.println("Area is " + Circle.getArea(radius));
     input.close();
   }
 }
