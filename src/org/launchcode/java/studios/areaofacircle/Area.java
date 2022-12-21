@@ -5,9 +5,7 @@ public class Area {
     Scanner input = new Scanner(System.in);
     System.out.println("Enter radius:");
     Double radius = input.nextDouble();
-    Double pi = 3.14;
-    Double area = pi * radius * radius;
-    System.out.println("Area is " + area);
+    System.out.println("Area is " + (3.14159 * radius * radius));
     input.close();
   }
 }
