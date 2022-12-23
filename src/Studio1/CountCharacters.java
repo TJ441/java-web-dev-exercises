@@ -21,5 +21,6 @@ public class CountCharacters {
         count++;
 
     System.out.print("Number of " + character + "'s = " + count);
+    input.close();
   }
 }
