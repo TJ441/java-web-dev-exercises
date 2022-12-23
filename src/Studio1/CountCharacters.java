@@ -21,6 +21,6 @@ public class CountCharacters {
       if (c == character)
         count++;
 
-    System.out.print("Number of " + character + "'s = " + count);
+    System.out.print("Number of " + character + "'s == " + count);
   }
 }
