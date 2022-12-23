@@ -16,11 +16,10 @@ public class CountCharacters {
     char character = converted[0];
 
     int count = 0;
-
     for (char c : charArray)
       if (c == character)
         count++;
 
-    System.out.print("Number of " + character + "'s == " + count);
+    System.out.print("Number of " + character + "'s = " + count);
   }
 }
