@@ -5,17 +5,12 @@ public abstract class Cat {
     private boolean tired = false;
     private boolean hungry = false;
     private double weight;
-
-    // The biological family for all cat species
     private static final String family = "Felidae";
 
     public Cat (double aWeight) {
         weight = aWeight;
     }
 
-    public Cat() {
-        weight = 13;
-    }
 
     /**** Getters and Setters ****/
 
