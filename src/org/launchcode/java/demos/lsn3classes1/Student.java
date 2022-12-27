@@ -47,13 +47,6 @@ public class Student {
     return Objects.hash(numberOfCredits);
   }
 
-  @Override
-  public String toString() {
-    return "Student{" +
-            "name='" + name + '\'' +
-            '}';
-  }
-
   public void setName(String aName) { name = aName; }
   public void setNumberOfCredits(int aNumberOfCredits) { numberOfCredits = aNumberOfCredits; }
   public void setGpa(double aGpa) { gpa = aGpa; }

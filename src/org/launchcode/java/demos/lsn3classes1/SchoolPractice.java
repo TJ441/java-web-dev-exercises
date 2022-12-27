@@ -6,6 +6,5 @@ public class SchoolPractice {
     Student secondStudent = new Student("Stacey Bullock", 32, 3.5);
     firstStudent.addGrade(3, 4.0);
     System.out.print(firstStudent.equals(secondStudent));
-    System.out.print(firstStudent.toString());
   }
 }
