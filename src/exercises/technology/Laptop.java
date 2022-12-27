@@ -1,54 +1,21 @@
 package exercises.technology;
-
 public class Laptop extends Computer {
-  private int screenSize;
 
-  public Laptop(int aRam, String aOperatingSystem, int aStorage, int aScreenSize) {
-    super(aRam, aOperatingSystem, aStorage);
-    screenSize = aScreenSize;
-  }
+  private double weight; // laptop weight in pounds.
 
-  public int getRam() {
-    return ram;
-  }
-  public void setRam(int aRam) {
-    ram = aRam;
+  public Laptop(int storage, int ram, boolean hasKeyboard, double weight) {
+    super(storage, ram, hasKeyboard);
+    this.weight = weight;
   }
 
-  public String getOperatingSystem() {
-    return operatingSystem;
+  public double getWeight() {
+    return this.weight;
   }
-  public void setOperatingSystem(String aOperatingSystem) {
-    operatingSystem = aOperatingSystem;
-  }
-
-  public int getStorage() {
-    return storage;
-  }
-  public void setStorage(int aStorage) {
-    storage = aStorage;
+  public void setWeight(double aWeight) {
+    weight = aWeight;
   }
 
-  public int getScreenSize() {
-    return screenSize;
-  }
-  public void setScreenSize(int aScreenSize) {
-    screenSize = aScreenSize;
-  }
-
-  public void printRam() {
-    System.out.print(ram);
-  }
-
-  public void printOperatingSystem() {
-    System.out.print(this.operatingSystem);
-  }
-
-  public void printStorage() {
-    System.out.print(storage);
-  }
-
-  public void printScreenSize() {
-    System.out.print(screenSize);
+  public boolean isClunky() {
+    return (weight > 5.0);
   }
 }

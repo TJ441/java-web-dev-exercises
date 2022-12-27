@@ -1,11 +1,15 @@
 package exercises.technology;
 
 public abstract class AbstractEntity {
-  static int nextId = 0;
-  int id;
+  private static int nextId = 1;
+  private final int id;
 
   public AbstractEntity() {
     this.id = nextId;
     nextId++;
+  }
+
+  public int getId() {
+    return this.id;
   }
 }

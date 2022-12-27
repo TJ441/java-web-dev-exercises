@@ -1,34 +1,21 @@
 package exercises.technology;
+public class SmartPhoneTwo extends Computer {
 
-  public class SmartPhoneTwo extends Computer {
-    private boolean replaceableBattery;
+  private int numberOfSelfies;
 
-    public SmartPhoneTwo (int aRam, String aOperatingSystem, int aStorage, boolean aReplaceableBattery) {
-      super(aRam, aOperatingSystem, aStorage);
-      replaceableBattery = aReplaceableBattery;
-    }
-
-    public boolean getReplaceableBattery() {
-      return replaceableBattery;
-    }
-    public void setReplaceableBattery(boolean aReplaceableBattery) {
-      replaceableBattery = aReplaceableBattery;
-    }
-
-    public void printRam() {
-      System.out.print(ram);
-    }
-
-    public void printOperatingSystem() {
-      System.out.print(operatingSystem);
-    }
-
-    public void printStorage() {
-      System.out.print(storage);
-    }
-
-    public void printBatteryInfo() {
-      System.out.print(replaceableBattery);
-    }
+  public SmartPhoneTwo(int storage, int ram, boolean hasKeyboard, int numberOfSelfies) {
+    super(storage, ram, hasKeyboard);
+    this.numberOfSelfies = numberOfSelfies;
   }
 
+  public int getNumberOfSelfies() {
+    return this.numberOfSelfies;
+  }
+  public void setNumberOfSelfies(int aNumberOfSelfies) {
+    numberOfSelfies = aNumberOfSelfies;
+  }
+
+  public void takeSelfie() {
+    this.numberOfSelfies = this.numberOfSelfies + 1;
+  }
+}
