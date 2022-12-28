@@ -1,7 +1,7 @@
 package StudioQuiz;
 
 public abstract class Question {
-  private String question;
+  private final String question;
 
   public Question(String question) {
     this.question = question;
@@ -9,8 +9,5 @@ public abstract class Question {
 
   public String getQuestion() {
     return this.question;
-  }
-  public void setQuestion(String aQuestion) {
-    question = aQuestion;
   }
 }
