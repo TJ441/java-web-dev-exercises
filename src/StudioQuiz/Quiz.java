@@ -7,6 +7,7 @@ public class Quiz {
   private final ArrayList<MultipleChoice> multipleChoice;
   private final ArrayList<CheckBox> checkBox;
   private double correctAnswers = 0;
+  private double numberOfQuestions = 0;
 
   public Quiz(ArrayList<TrueFalse> aTrueFalse,
               ArrayList<MultipleChoice> aMultipleChoice,
@@ -18,39 +19,41 @@ public class Quiz {
   }
 
   public void printQuiz() {
+    Scanner input = new Scanner(System.in);
     for (TrueFalse q : trueFalse) {
-      Scanner input = new Scanner(System.in);
       System.out.print(q.getQuestion() + "\n");
       System.out.print("Answer 'true' or 'false': ");
       boolean answer = input.nextBoolean();
+      this.numberOfQuestions++;
 
       if (q.checkAnswer(answer)) {
         this.correctAnswers++;
-        System.out.print("Correct");
+        System.out.print("Correct\n");
       } else {
-          System.out.print("Incorrect");
+          System.out.print("Incorrect\n");
       }
     }
 
-    /*for (TrueFalse q : trueFalse) {
-      System.out.print(q.getQuestion());
-      System.out.print(q.getAnswer());
+    for (MultipleChoice q : multipleChoice) {
+      System.out.print(q.getQuestion() + "\n");
+      System.out.print("Answer a, b or c: ");
+      String answer = input.next();
+      char[] answerCharArray = answer.toCharArray();
+      char convertedAnswer = answerCharArray[0];
+      this.numberOfQuestions++;
+
+      if (q.checkAnswer(convertedAnswer)) {
+        this.correctAnswers++;
+        System.out.print("Correct\n");
+      } else {
+        System.out.print("Incorrect\n");
+      }
     }
-    for (MultipleChoice q : multipleChoiceQuestions) {
-      System.out.print(q.getQuestion());
-      System.out.print(q.getAnswer());
-    }
-    for (CheckBox q : checkBoxQuestions) {
-      System.out.print(q.getQuestion());
-      System.out.print(q.getAnswer());
-    }*/
   }
 
   public double gradeQuiz() {
-    return (correctAnswers / 3.00) * 100;
+    return (correctAnswers / numberOfQuestions) * 100;
   }
-  //Here executes the quiz, as I've done already to a degree
-    //Here goes addQuestion function, which I haven't done
-    //Here goes grading the quiz, which I haven't done
 
+    //Here goes addQuestion function, which I haven't done
 }

@@ -22,6 +22,6 @@ public class QuizRunner {
 
     Quiz quiz = new Quiz(trueFalse, multipleChoice, checkBox);
     quiz.printQuiz();
-    System.out.print(quiz.gradeQuiz());
+    System.out.print("Score: " + quiz.gradeQuiz());
   }
 }

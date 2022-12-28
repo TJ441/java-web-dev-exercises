@@ -14,4 +14,8 @@ public class MultipleChoice extends Question {
   public void setAnswer(char aAnswer) {
     answer = aAnswer;
   }
+
+  public boolean checkAnswer(char answer) {
+    return answer == this.answer;
+  }
 }
