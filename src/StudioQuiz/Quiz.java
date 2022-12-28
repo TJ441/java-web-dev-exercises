@@ -30,7 +30,7 @@ public class Quiz {
         this.correctAnswers++;
         System.out.print("Correct\n");
       } else {
-        System.out.print("Incorrect\nCorrect answer is " + q.getAnswer() + "\n");
+          System.out.print("Incorrect\nCorrect answer is " + q.getAnswer() + "\n");
       }
     }
 
@@ -44,7 +44,7 @@ public class Quiz {
         this.correctAnswers++;
         System.out.print("Correct\n");
       } else {
-        System.out.print("Incorrect\nCorrect answer is " + q.getAnswer() + "\n");
+          System.out.print("Incorrect\nCorrect answer is " + q.getAnswer() + "\n");
       }
     }
 
@@ -61,9 +61,10 @@ public class Quiz {
           System.out.print("Incorrect\nCorrect answer is " + q.getAnswer() + "\n");
       }
     }
+    System.out.print("Score: " + gradeQuiz() + "%");
   }
 
-  public double gradeQuiz() {
+  private double gradeQuiz() {
     return Math.round((correctAnswers / numberOfQuestions) * 100);
   }
 
