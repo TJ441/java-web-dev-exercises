@@ -3,27 +3,26 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Quiz {
-  private final ArrayList<TrueFalse> trueFalseQuestions;
-  private final ArrayList<MultipleChoice> multipleChoiceQuestions;
-  private final ArrayList<CheckBox> checkBoxQuestions;
+  private final ArrayList<TrueFalse> trueFalse;
+  private final ArrayList<MultipleChoice> multipleChoice;
+  private final ArrayList<CheckBox> checkBox;
 
-  public Quiz(ArrayList<TrueFalse> aTrueFalseQuestions,
-              ArrayList<MultipleChoice> aMultipleChoiceQuestions,
-              ArrayList<CheckBox> aCheckBoxQuestions) {
+  public Quiz(ArrayList<TrueFalse> aTrueFalse,
+              ArrayList<MultipleChoice> aMultipleChoice,
+              ArrayList<CheckBox> aCheckBox) {
 
-    trueFalseQuestions = aTrueFalseQuestions;
-    multipleChoiceQuestions = aMultipleChoiceQuestions;
-    checkBoxQuestions = aCheckBoxQuestions;
+    trueFalse = aTrueFalse;
+    multipleChoice = aMultipleChoice;
+    checkBox = aCheckBox;
   }
 
   public void printQuiz() {
     Scanner input = new Scanner(System.in);
-    System.out.print(trueFalseQuestions.get(0).getQuestion() + "\n");
+    System.out.print(trueFalse.get(0).getQuestion() + "\n");
     System.out.print("Answer 'true' or 'false': ");
-    Boolean answer = input.nextBoolean();
-    if (answer == trueFalseQuestions.get(0).getAnswer())
-      System.out.print("Correct");
-    else System.out.print("Incorrect");
+    boolean answer = input.nextBoolean();
+    trueFalse.get(0).checkAnswer(answer);
+    System.out.print(trueFalse.get(0).getIsCorrect());
 
     /*for (TrueFalse q : trueFalseQuestions) {
       System.out.print(q.getQuestion());
@@ -38,7 +37,7 @@ public class Quiz {
       System.out.print(q.getAnswer());
     }*/
   }
-  //Here executes the quiz, as I've done already
+  //Here executes the quiz, as I've done already to a degree
     //Here goes addQuestion function, which I haven't done
     //Here goes grading the quiz, which I haven't done
 

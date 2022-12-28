@@ -4,23 +4,23 @@ import java.util.Arrays;
 
 public class QuizRunner {
   public static void main(String[] args) {
-    ArrayList<TrueFalse> trueFalseQuestions = new ArrayList<>(Arrays.asList(
-      new TrueFalse("The Earth is bigger than the Moon", true),
+    ArrayList<TrueFalse> trueFalse = new ArrayList<>(Arrays.asList(
+      new TrueFalse("The Earth is bigger than the Moon", false),
       new TrueFalse("Earth's atmosphere is 78% nitrogen", true),
       new TrueFalse("Pluto is considered a planet", false)
     ));
 
-    ArrayList<MultipleChoice> multipleChoiceQuestions = new ArrayList<>(Arrays.asList(
+    ArrayList<MultipleChoice> multipleChoice = new ArrayList<>(Arrays.asList(
       new MultipleChoice("Is it a, b or c?", 'a'),
       new MultipleChoice("Is it c, b or a?", 'c')
     ));
 
-    ArrayList<CheckBox> checkBoxQuestions = new ArrayList<>(Arrays.asList(
+    ArrayList<CheckBox> checkBox = new ArrayList<>(Arrays.asList(
       new CheckBox("Just pick a: ", 'a'),
       new CheckBox("Just pick b: ", 'b')
     ));
 
-    Quiz quiz = new Quiz(trueFalseQuestions, multipleChoiceQuestions, checkBoxQuestions);
+    Quiz quiz = new Quiz(trueFalse, multipleChoice, checkBox);
     quiz.printQuiz();
   }
 }
