@@ -11,17 +11,17 @@ public class QuizRunner {
     ));
 
     ArrayList<MultipleChoice> multipleChoice = new ArrayList<>(Arrays.asList(
-      new MultipleChoice("Is it a, b or c?", 'a'),
-      new MultipleChoice("Is it c, b or a?", 'c')
+      new MultipleChoice("Is it a, b or c?", "a"),
+      new MultipleChoice("Is it c, b or a?", "c")
     ));
 
     ArrayList<CheckBox> checkBox = new ArrayList<>(Arrays.asList(
-      new CheckBox("Just pick a: ", 'a'),
-      new CheckBox("Just pick b: ", 'b')
+      new CheckBox("Which answers are correct?: ", "abc"),
+      new CheckBox("Just pick b: ", "b")
     ));
 
     Quiz quiz = new Quiz(trueFalse, multipleChoice, checkBox);
     quiz.printQuiz();
-    System.out.print("Score: " + quiz.gradeQuiz());
+    System.out.print("Score: " + quiz.gradeQuiz() + "%");
   }
 }

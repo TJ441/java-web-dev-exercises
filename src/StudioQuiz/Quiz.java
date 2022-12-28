@@ -30,7 +30,7 @@ public class Quiz {
         this.correctAnswers++;
         System.out.print("Correct\n");
       } else {
-          System.out.print("Incorrect\n");
+        System.out.print("Incorrect\nCorrect answer is " + q.getAnswer() + "\n");
       }
     }
 
@@ -38,22 +38,34 @@ public class Quiz {
       System.out.print(q.getQuestion() + "\n");
       System.out.print("Answer a, b or c: ");
       String answer = input.next();
-      char[] answerCharArray = answer.toCharArray();
-      char convertedAnswer = answerCharArray[0];
       this.numberOfQuestions++;
 
-      if (q.checkAnswer(convertedAnswer)) {
+      if (q.checkAnswer(answer)) {
         this.correctAnswers++;
         System.out.print("Correct\n");
       } else {
-        System.out.print("Incorrect\n");
+        System.out.print("Incorrect\nCorrect answer is " + q.getAnswer() + "\n");
+      }
+    }
+
+    for (CheckBox q : checkBox) {
+      System.out.print(q.getQuestion() + "\n");
+      System.out.print("Answer all that apply: ");
+      String answer = input.next();
+      this.numberOfQuestions++;
+
+      if (q.checkAnswer(answer)) {
+        this.correctAnswers++;
+        System.out.print("Correct\n");
+      } else {
+          System.out.print("Incorrect\nCorrect answer is " + q.getAnswer() + "\n");
       }
     }
   }
 
   public double gradeQuiz() {
-    return (correctAnswers / numberOfQuestions) * 100;
+    return Math.round((correctAnswers / numberOfQuestions) * 100);
   }
 
-    //Here goes addQuestion function, which I haven't done
+    //Here goes addQuestion function, to be called from QuizRunner, which I haven't done
 }

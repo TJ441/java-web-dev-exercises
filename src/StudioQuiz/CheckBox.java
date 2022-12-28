@@ -1,17 +1,23 @@
 package StudioQuiz;
 
-public class CheckBox extends Question {
-  private char answer;
+import java.util.Objects;
 
-  public CheckBox(String aQuestion, char aAnswer) {
+public class CheckBox extends Question {
+  private String answer;
+
+  public CheckBox(String aQuestion, String aAnswer) {
     super(aQuestion);
     this.answer = aAnswer;
   }
 
-  public char getAnswer() {
+  public String getAnswer() {
     return this.answer;
   }
-  public void setAnswer(char aAnswer) {
+  public void setAnswer(String aAnswer) {
     answer = aAnswer;
+  }
+
+  public boolean checkAnswer(String answer) {
+    return Objects.equals(answer, this.answer);
   }
 }
