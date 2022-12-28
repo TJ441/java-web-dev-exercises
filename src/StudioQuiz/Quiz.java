@@ -20,6 +20,7 @@ public class Quiz {
 
   public void printQuiz() {
     Scanner input = new Scanner(System.in);
+
     for (TrueFalse q : trueFalse) {
       System.out.print(q.getQuestion() + "\n");
       System.out.print("Answer 'true' or 'false': ");
