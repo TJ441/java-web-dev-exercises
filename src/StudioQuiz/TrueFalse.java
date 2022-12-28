@@ -3,13 +3,13 @@ package StudioQuiz;
 public class TrueFalse extends Question {
   private boolean answer;
 
-  public TrueFalse(String aQuestion, boolean answer) {
+  public TrueFalse(String aQuestion, boolean aAnswer) {
     super(aQuestion);
-    this.answer = answer;
+    this.answer = aAnswer;
   }
 
   public boolean getAnswer() {
-    return answer;
+    return this.answer;
   }
   public void setAnswer(boolean aAnswer) {
     answer = aAnswer;

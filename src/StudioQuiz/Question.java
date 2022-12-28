@@ -7,7 +7,6 @@ public abstract class Question {
     this.question = question;
   }
 
-
   public String getQuestion() {
     return this.question;
   }

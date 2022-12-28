@@ -1,15 +1,25 @@
 package StudioQuiz;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Quiz {
-  public static void printQuiz() {
-    Scanner input = new Scanner(System.in);
-    TrueFalse question1 = new TrueFalse("The Earth is bigger than the Moon", true);
-    System.out.print("Question 1 (true or false) - " + question1.getQuestion() + "\nRespond here: ");
-    boolean answer = input.nextBoolean();
+  private static final ArrayList<TrueFalse> trueFalseQuestions = new ArrayList<>(Arrays.asList(
+    new TrueFalse("The Earth is bigger than the Moon", true),
+    new TrueFalse("Earth's atmosphere is 78% nitrogen", true),
+    new TrueFalse("Pluto is considered a planet", false)
+  ));
 
-    if (answer == question1.getAnswer())
-      System.out.print("Correct");
-    else System.out.print("Incorrect");
+  private static final ArrayList<MultipleChoice> multipleChoiceQuestions = new ArrayList<>(Arrays.asList(
+    new MultipleChoice("Is it a, b or c?", 'a'),
+    new MultipleChoice("Is it c, b or a?", 'c')
+  ));
+
+  public static void printQuiz() {
+    for (TrueFalse q : trueFalseQuestions) {
+      System.out.print("Question: " + q.getQuestion() + "\n" + q.getAnswer() + "\n");
+    }
+    for (MultipleChoice q : multipleChoiceQuestions) {
+      System.out.print("Question: " + q.getQuestion() + "\n" + q.getAnswer() + "\n");
+    }
   }
 }
