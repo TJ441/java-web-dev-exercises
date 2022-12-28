@@ -10,4 +10,5 @@ public abstract class Question {
   public String getQuestion() {
     return this.question;
   }
+
 }

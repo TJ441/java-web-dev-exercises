@@ -1,15 +1,32 @@
 package StudioQuiz;
-import java.util.Arrays;
 import java.util.ArrayList;
 
 public class Quiz {
-  private final ArrayList<Question> questions;
+  private final ArrayList<TrueFalse> trueFalseQuestions;
+  private final ArrayList<MultipleChoice> multipleChoiceQuestions;
+  private final ArrayList<CheckBox> checkBoxQuestions;
 
-  public Quiz(ArrayList<Question> aQuestions) {
-    questions = aQuestions;
+  public Quiz(ArrayList<TrueFalse> aTrueFalseQuestions,
+              ArrayList<MultipleChoice> aMultipleChoiceQuestions,
+              ArrayList<CheckBox> aCheckBoxQuestions) {
+
+    trueFalseQuestions = aTrueFalseQuestions;
+    multipleChoiceQuestions = aMultipleChoiceQuestions;
+    checkBoxQuestions = aCheckBoxQuestions;
   }
 
   public void printQuiz() {
-    System.out.print(questions);
+    for (TrueFalse q : trueFalseQuestions) {
+      System.out.print(q.getQuestion());
+      System.out.print(q.getAnswer());
+    }
+    for (MultipleChoice q : multipleChoiceQuestions) {
+      System.out.print(q.getQuestion());
+      System.out.print(q.getAnswer());
+    }
+    for (CheckBox q : checkBoxQuestions) {
+      System.out.print(q.getQuestion());
+      System.out.print(q.getAnswer());
+    }
   }
 }

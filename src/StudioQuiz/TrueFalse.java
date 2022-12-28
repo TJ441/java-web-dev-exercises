@@ -5,13 +5,13 @@ public class TrueFalse extends Question {
 
   public TrueFalse(String aQuestion, boolean aAnswer) {
     super(aQuestion);
-    this.answer = aAnswer;
+    answer = aAnswer;
   }
 
   public boolean getAnswer() {
     return this.answer;
   }
   public void setAnswer(boolean aAnswer) {
-    answer = aAnswer;
+    this.answer = aAnswer;
   }
 }
