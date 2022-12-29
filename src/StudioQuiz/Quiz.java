@@ -9,10 +9,7 @@ public class Quiz {
   private double correctAnswers = 0;
   private double numberOfQuestions = 0;
 
-  public Quiz(ArrayList<TrueFalse> aTrueFalse,
-              ArrayList<MultipleChoice> aMultipleChoice,
-              ArrayList<CheckBox> aCheckBox) {
-
+  public Quiz(ArrayList<TrueFalse> aTrueFalse, ArrayList<MultipleChoice> aMultipleChoice, ArrayList<CheckBox> aCheckBox) {
     trueFalse = aTrueFalse;
     multipleChoice = aMultipleChoice;
     checkBox = aCheckBox;
@@ -63,6 +60,7 @@ public class Quiz {
       }
     }
     System.out.print("Score: " + gradeQuiz() + "%");
+    input.close();
   }
 
   private double gradeQuiz() {
